@@ -1,0 +1,46 @@
+# Concirrus
+
+> Concirrus Ltd is a London-headquartered insurtech (founded 2012) selling AI-driven underwriting and submission-automation software to specialty and commercial insurers, MGAs and brokers — marine (hull, cargo, P&I), aviation, construction, property, and political violence & terrorism. Concirrus is a software vendor to the insurance market, not an insurer. As of 2026-07-25 it publishes no developer portal, no API reference, no OpenAPI/Swagger, no Postman collection, no GraphQL endpoint and no webhook/event catalog: integration is partner-gated and obtained through a commercial engagement.
+
+## What Concirrus sells
+
+- [Enterprise Model](https://concirrus.ai/enterprise-model-insurance-platform/): universal submission-ingestion layer covering all specialty lines, positioned for rapid onboarding
+- [Underwriting Workbench](https://concirrus.ai/underwriting-workbench/): submission triage, appetite matching and real-time risk rating — marketing states Excel raters can be replicated "via API"
+- [Exposure Management](https://concirrus.ai/exposure-management/): portfolio accumulation and exposure decisioning
+- [Loss Run Intelligence](https://concirrus.ai/loss-run-intelligence/): structuring and reading loss-run documents
+- Lines of business: [Marine](https://concirrus.ai/marine/), [Aviation](https://concirrus.ai/aviation/), [Construction](https://concirrus.ai/construction/), [Property](https://concirrus.ai/property/), [Political Violence & Terrorism](https://concirrus.ai/political-violence-terrorism/)
+
+## APIs
+
+- No public API. There is no developer portal, no API reference, no machine-readable definition, and no self-serve signup.
+- Integration path: [Partner ecosystem](https://concirrus.ai/partner-ecosystem/) — verbatim, "Concirrus provides a modular, API first platform, joint go to market alignment, and partner enablement."
+- Commercial entry point: [Book a demo](https://concirrus.ai/book-a-demo/)
+- The marine product page claims "Seamlessly integrate with London Market platforms" without naming PPL, Whitespace, Lloyd's Blueprint Two, ACORD, AL3 or NGDS.
+
+## Verified absences (probed 2026-07-25)
+
+- developer./developers./docs./api./app./quest. on both concirrus.com and concirrus.ai: NXDOMAIN
+- concirrus.ai/openapi.json, /swagger.json, /api-docs, /graphql, /llms.txt: 404
+- /.well-known/security.txt, /openid-configuration, /oauth-authorization-server, /api-catalog, /ai-plugin.json: 404
+- No GitHub organization; no npm, PyPI or other registry package; no Postman workspace; no status page; no changelog; no published terms of service or pricing
+- concirrus.ai/wp-json/ returns 200 — the stock WordPress REST API of the marketing site, not a product API
+
+## Compliance
+
+- [Triple certification announcement](https://concirrus.ai/first-insurtech-ai-governance-certification/) (2025-08-15): ISO/IEC 42001 (AI management), ISO/IEC 27001 (information security), SOC 2. No trust center or downloadable report is published; reports are available under commercial engagement only.
+
+## Repository artifacts
+
+- [apis.yml](https://raw.githubusercontent.com/api-evangelist/concirrus/refs/heads/main/apis.yml): APIs.json index for Concirrus
+- [review.yml](https://raw.githubusercontent.com/api-evangelist/concirrus/refs/heads/main/review.yml): API Evangelist review — probe log, subdomain enumeration, ACORD posture, insurance verbs
+- [conformance/concirrus-conformance.yml](https://raw.githubusercontent.com/api-evangelist/concirrus/refs/heads/main/conformance/concirrus-conformance.yml): standards and certification posture
+- [security/concirrus-domain-security.yml](https://raw.githubusercontent.com/api-evangelist/concirrus/refs/heads/main/security/concirrus-domain-security.yml): TLS/HSTS/DNSSEC/CAA/SPF/DMARC probe
+- [well-known/concirrus-well-known.yml](https://raw.githubusercontent.com/api-evangelist/concirrus/refs/heads/main/well-known/concirrus-well-known.yml): /.well-known/ sweep
+- [packages/concirrus-packages.yml](https://raw.githubusercontent.com/api-evangelist/concirrus/refs/heads/main/packages/concirrus-packages.yml): package-registry sweep
+
+## Company
+
+- [Website](https://concirrus.ai/) · [About](https://concirrus.ai/about/) · [Blog](https://concirrus.ai/blog/) · [Clients](https://concirrus.ai/clients/) · [Careers](https://concirrus.ai/careers/) · [Privacy policy](https://concirrus.ai/privacy-policy/)
+- [LinkedIn](https://www.linkedin.com/company/concirrus) · [YouTube — Inspire by Concirrus](https://www.youtube.com/@InspireByConcirrus)
+
+<!-- generated: 2026-07-25 | method: generated | source: apis.yml + repo artifacts + live probes; /llms.txt returned 404 on concirrus.ai -->

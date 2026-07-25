@@ -22,7 +22,11 @@ description: >-
   concirrus.com and concirrus.ai) does not resolve, and every on-site developer
   path returns 404. Integration is obtained through a commercial engagement or
   the partner ecosystem programme, not self-serve signup. No ACORD, AL3, NGDS or
-  ACORD XML reference appears anywhere on the public site.
+  ACORD XML reference appears anywhere on the public site. Concirrus does publish
+  a real compliance posture: in August 2025 it announced ISO/IEC 42001 (AI
+  management), ISO/IEC 27001 (information security) and SOC 2 certification,
+  claiming to be the first insurtech to hold all three — though no trust center
+  or downloadable report accompanies the announcement.
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - Insurance
@@ -43,6 +47,14 @@ modified: '2026-07-25'
 specificationVersion: '0.19'
 apis: []
 common:
+- type: DomainSecurity
+  url: security/concirrus-domain-security.yml
+- type: Conformance
+  url: conformance/concirrus-conformance.yml
+- type: Compliance
+  url: https://concirrus.ai/first-insurtech-ai-governance-certification/
+- type: LLMsTxt
+  url: llms/concirrus-llms.txt
 - type: Website
   url: https://concirrus.ai/
 - type: About
@@ -63,6 +75,14 @@ common:
   url: https://concirrus.ai/privacy-policy/
 - type: LinkedIn
   url: https://www.linkedin.com/company/concirrus
+- type: YouTube
+  url: https://www.youtube.com/@InspireByConcirrus
+- type: Media
+  url: https://concirrus.ai/media/
+- type: Events
+  url: https://concirrus.ai/events/
+- type: Resources
+  url: https://concirrus.ai/whitepaper-podcasts-webinars-downloads/
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

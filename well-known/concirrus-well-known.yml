@@ -1,0 +1,38 @@
+generated: '2026-07-25'
+method: probed
+source: live HTTP probes of the only public Concirrus host
+host: https://concirrus.ai
+note: >-
+  Concirrus serves no /.well-known/ discovery surface. Every document below was
+  probed on 2026-07-25 and returned 404 from the WordPress marketing site. No
+  raw files were saved because none exist — this index records the sweep so a
+  later round does not repeat it. Only concirrus.ai is probed: apex
+  concirrus.com fails TLS negotiation, www.concirrus.com redirects here, and
+  developer./developers./docs./api./app. on both domains are NXDOMAIN, so there
+  is no API host to probe.
+documents:
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/openid-configuration
+  status: 404
+- path: /.well-known/oauth-authorization-server
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404
+other_surfaces:
+- path: /wp-json/
+  status: 200
+  kind: WordPress REST API (CMS)
+  note: >-
+    The marketing site exposes the stock WordPress REST API (364 routes across
+    20 namespaces — wp/v2, yoast/v1, elementor/*, google-site-kit/v1). This is
+    the content-management surface of a WordPress site, NOT a Concirrus product
+    API, and is deliberately not listed in apis[] or wired as an API pointer.
+    Recorded here so future rounds do not mistake it for a product contract.
+- path: /llms.txt
+  status: 404
+- path: /robots.txt
+  status: 200
+  note: Yoast block, no disallow rules, points at sitemap_index.xml

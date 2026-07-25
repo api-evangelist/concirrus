@@ -1,0 +1,26 @@
+generated: '2026-07-25'
+method: searched
+source: public package-registry and code-host searches, 2026-07-25
+note: >-
+  No first-party Concirrus client library exists on any public registry, and
+  Concirrus has no GitHub organization. Absence is the finding — this file
+  records the sweep so a later round does not repeat it. No `SDKs` pointer is
+  wired because there is no SDK.
+packages: []
+registries_searched:
+- registry: npm
+  query: concirrus
+  result: 0 packages
+  url: https://www.npmjs.com/search?q=concirrus
+- registry: pypi
+  query: concirrus
+  result: 404 not found
+  url: https://pypi.org/project/concirrus/
+- registry: github
+  query: org concirrus
+  result: no organization; a code search returns only unrelated third-party candidate-assignment
+    repositories
+  url: https://github.com/concirrus
+- registry: docs
+  query: SDK / client library links on concirrus.ai
+  result: none — no developer portal, download page or SDK link exists on the site

@@ -1,0 +1,91 @@
+generated: '2026-07-25'
+method: searched
+source: https://concirrus.ai/first-insurtech-ai-governance-certification/
+note: >-
+  Concirrus publishes no machine-readable API definition, so no standard below
+  can be asserted from a specification. Every `conforms: true` entry here is
+  grounded in a published certification announcement on Concirrus's own site
+  (and matching trade coverage); every `conforms: false` entry records a real,
+  verified absence rather than a failure to look. Absence of an API standard is
+  the expected result for a partner-gated specialty-insurance software vendor.
+standards:
+- id: iso-iec-42001
+  name: ISO/IEC 42001 — Artificial Intelligence Management System
+  conforms: true
+  evidence: >-
+    "Concirrus becomes first insurtech to earn triple AI, security and data trust
+    certifications" (announced 2025-08-15) states Concirrus holds ISO/IEC 42001
+    for AI governance across its underwriting and submission-automation platform.
+  source: https://concirrus.ai/first-insurtech-ai-governance-certification/
+  audit: independently audited; certifying body not named publicly
+- id: iso-iec-27001
+  name: ISO/IEC 27001 — Information Security Management System
+  conforms: true
+  evidence: >-
+    Same announcement states ISO/IEC 27001 certification covering controls over
+    confidentiality, integrity and availability of customer data.
+  source: https://concirrus.ai/first-insurtech-ai-governance-certification/
+  audit: independently audited; certifying body not named publicly
+- id: soc2
+  name: SOC 2
+  conforms: true
+  evidence: >-
+    Same announcement states SOC 2 compliance for data handling. The Type (I or
+    II) is not stated in any public Concirrus material, and no report or bridge
+    letter is published — it is available only under commercial engagement.
+  source: https://concirrus.ai/first-insurtech-ai-governance-certification/
+  type_designation: not published
+- id: gdpr
+  name: EU/UK GDPR
+  conforms: unknown
+  evidence: >-
+    A privacy policy is published at https://concirrus.ai/privacy-policy/ but no
+    DPA, sub-processor list, SCC posture or data-residency statement is public.
+- id: oauth2
+  conforms: false
+  evidence: >-
+    No OAuth authorization-server metadata is served. /.well-known/oauth-authorization-server
+    returns 404 on concirrus.ai (probed 2026-07-25). A keycloaktest.concirrus.com
+    host appears in certificate transparency, implying Keycloak-based identity for
+    internal or tenant SSO, but nothing is publicly documented.
+- id: openid-connect
+  conforms: false
+  evidence: /.well-known/openid-configuration returns 404 on concirrus.ai (probed 2026-07-25)
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: /.well-known/security.txt returns 404 on concirrus.ai (probed 2026-07-25)
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: no public API specification or error reference exists to assert against
+- id: rfc8594-sunset-header
+  conforms: false
+  evidence: no public deprecation or versioning policy is published
+- id: openapi
+  conforms: false
+  evidence: >-
+    No OpenAPI/Swagger document is published. Probed on 2026-07-25:
+    concirrus.ai/openapi.json 404, /swagger.json 404, /api-docs 404; every
+    developer/docs/api hostname on concirrus.com and concirrus.ai is NXDOMAIN.
+- id: asyncapi
+  conforms: false
+  evidence: no event, streaming or webhook catalog is published
+- id: acord
+  name: ACORD standards (AL3, ACORD XML, NGDS)
+  conforms: false
+  evidence: >-
+    No ACORD, AL3, NGDS or IVANS reference appears anywhere on concirrus.ai, and
+    no ACORD solution-provider listing was found. Notable for a London-market
+    specialty vendor whose marketing claims "seamless integration with London
+    Market platforms".
+compliance_program:
+  published: true
+  url: https://concirrus.ai/first-insurtech-ai-governance-certification/
+  announced: '2025-08-15'
+  certifications:
+  - ISO/IEC 42001
+  - ISO/IEC 27001
+  - SOC 2
+  trust_center: none — no trust.concirrus.ai, /trust, /security or /compliance page exists
+    (probed 2026-07-25; concirrus.ai/compliance redirects to an unrelated marine
+    sanctions-screening blog post)
+  reports_available: on request under commercial engagement only
