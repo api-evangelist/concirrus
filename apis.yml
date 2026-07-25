@@ -1,0 +1,68 @@
+aid: concirrus
+url: https://raw.githubusercontent.com/api-evangelist/concirrus/refs/heads/main/apis.yml
+name: Concirrus
+kind: company
+description: >-
+  Concirrus Ltd is a London-headquartered insurtech founded in 2012 that builds
+  AI-driven underwriting software for the specialty and commercial insurance
+  market — marine (hull, cargo, P&I), aviation, construction, property, and
+  political violence and terrorism. Its platform (Quest, Marine One, the
+  Underwriting Workbench, Exposure Management, Loss Run Intelligence, and an
+  "Enterprise Model" universal submission-ingestion layer) ingests broker
+  submissions, structures the risk data, scores behavioural risk, and returns
+  rating and exposure decisions to carriers, MGAs and brokers — much of it aimed
+  at the Lloyd's and London subscription market. Concirrus is a vendor to
+  insurers rather than an insurer itself, so it touches quote and rating rather
+  than bind, issue or FNOL. Its API posture is partner-gated: marketing
+  describes "a modular, API first platform" and "seamless integration with
+  London Market platforms", but as of 2026-07-25 there is no public developer
+  portal, no published API reference, no downloadable OpenAPI/Swagger, no
+  Postman collection, and no public GraphQL or webhook catalog. Every developer
+  and docs hostname probed (developer./developers./docs./api. on both
+  concirrus.com and concirrus.ai) does not resolve, and every on-site developer
+  path returns 404. Integration is obtained through a commercial engagement or
+  the partner ecosystem programme, not self-serve signup. No ACORD, AL3, NGDS or
+  ACORD XML reference appears anywhere on the public site.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Insurance
+- United Kingdom
+- Insurtech
+- Specialty Insurance
+- Marine Insurance
+- Aviation Insurance
+- Underwriting
+- Risk Data
+- London Market
+- Lloyd's of London
+- Exposure Management
+- Artificial Intelligence
+- Partner Gated
+created: '2026-07-25'
+modified: '2026-07-25'
+specificationVersion: '0.19'
+apis: []
+common:
+- type: Website
+  url: https://concirrus.ai/
+- type: About
+  url: https://concirrus.ai/about/
+- type: Blog
+  url: https://concirrus.ai/blog/
+- type: BlogRSS
+  url: https://concirrus.ai/feed/
+- type: Partners
+  url: https://concirrus.ai/partner-ecosystem/
+- type: Customers
+  url: https://concirrus.ai/clients/
+- type: ContactSales
+  url: https://concirrus.ai/book-a-demo/
+- type: Careers
+  url: https://concirrus.ai/careers/
+- type: PrivacyPolicy
+  url: https://concirrus.ai/privacy-policy/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/concirrus
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

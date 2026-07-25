@@ -1,0 +1,210 @@
+aid: concirrus
+name: Concirrus
+review:
+  question: Does Concirrus expose a public, self-serve developer portal or downloadable
+    API definitions for its specialty insurance underwriting platform?
+  answer: false
+  date: '2026-07-25'
+  reviewer: API Evangelist
+  homeMarket: United Kingdom
+  gated: true
+findings:
+  summary: |
+    Concirrus Ltd (London, founded 2012) is a specialty-insurance software
+    vendor, not a carrier. It sells AI underwriting and exposure-management
+    software (Quest, Marine One, Underwriting Workbench, Exposure Management,
+    Loss Run Intelligence, and the "Enterprise Model" submission-ingestion
+    layer) to insurers, MGAs and brokers across marine, aviation, construction,
+    property, and political violence and terrorism.
+
+    Its public web presence is a WordPress marketing site. The apex
+    concirrus.com fails TLS negotiation; www.concirrus.com returns 200 and
+    redirects to https://concirrus.ai/, which is now the live property. There
+    is NO public developer portal, NO API reference, NO downloadable
+    OpenAPI/Swagger, NO Postman collection, NO GraphQL endpoint, NO published
+    .proto, and NO event/webhook or AsyncAPI catalog.
+
+    The only public API language is marketing copy on the partner page:
+    "Concirrus provides a modular, API first platform, joint go to market
+    alignment, and partner enablement." The marine product page adds
+    "Seamlessly integrate with London Market platforms to streamline data flow
+    and ensure compliance across all risk classes" without naming PPL,
+    Whitespace, Lloyd's, Blueprint Two, or any protocol. Integration is
+    obtained through a commercial engagement (book-a-demo) or the partner
+    ecosystem programme. This is a classic UK specialty/London-market posture:
+    real machine-to-machine integration exists inside carrier and broker
+    deployments but is entirely invisible from the outside.
+  developerPortal:
+    url: ''
+    status: none
+    classification: no developer portal — marketing site only; the closest public
+      surface is the partner ecosystem marketing page
+    closestPublicSurface: https://concirrus.ai/partner-ecosystem/
+    closestPublicSurfaceStatus: 200
+  probes:
+  - url: https://concirrus.com
+    status: 000
+    note: TLS handshake failure on the apex (curl error 35, sslv3 alert handshake failure);
+      DNS resolves to Cloudflare 162.159.137.9
+  - url: https://www.concirrus.com
+    status: 200
+    note: Redirects to https://concirrus.ai/ — concirrus.ai is the live property
+  - url: https://concirrus.ai
+    status: 200
+    note: WordPress marketing site (Yoast sitemap, Elementor/Astra)
+  - url: https://developer.concirrus.com
+    status: 000
+    note: NXDOMAIN
+  - url: https://developers.concirrus.com
+    status: 000
+    note: NXDOMAIN
+  - url: https://docs.concirrus.com
+    status: 000
+    note: NXDOMAIN
+  - url: https://api.concirrus.com
+    status: 000
+    note: NXDOMAIN
+  - url: https://developer.concirrus.ai
+    status: 000
+    note: NXDOMAIN
+  - url: https://developers.concirrus.ai
+    status: 000
+    note: NXDOMAIN
+  - url: https://docs.concirrus.ai
+    status: 000
+    note: NXDOMAIN
+  - url: https://api.concirrus.ai
+    status: 000
+    note: NXDOMAIN
+  - url: https://app.concirrus.ai
+    status: 000
+    note: NXDOMAIN
+  - url: https://quest.concirrus.ai
+    status: 000
+    note: NXDOMAIN — no public host for the Quest platform
+  - url: https://concirrus.ai/developers
+    status: 404
+  - url: https://concirrus.ai/developer
+    status: 404
+  - url: https://concirrus.ai/api
+    status: 404
+  - url: https://concirrus.ai/partners
+    status: 404
+  - url: https://concirrus.ai/integrations
+    status: 404
+  - url: https://concirrus.ai/partner-ecosystem/
+    status: 200
+    note: Marketing partner programme page — the only page containing "API first"
+  - url: https://concirrus.ai/openapi.json
+    status: 404
+  - url: https://concirrus.ai/swagger.json
+    status: 404
+  - url: https://concirrus.ai/api-docs
+    status: 404
+  - url: https://concirrus.ai/.well-known/openid-configuration
+    status: 404
+  - url: https://concirrus.ai/.well-known/oauth-authorization-server
+    status: 404
+  - url: https://learn.concirrus.ai/
+    status: 200
+    note: Userled-hosted marketing personalization microsite, not developer docs
+  - url: https://concirrus.ai/robots.txt
+    status: 200
+    note: Yoast block, no disallow, points at sitemap_index.xml
+  - url: https://concirrus.ai/sitemap_index.xml
+    status: 200
+    note: Full page sitemap enumerated — 28 pages, none developer/API/docs related
+  - url: https://api.github.com/orgs/concirrus
+    status: 404
+    note: No GitHub organization; a GitHub code search returns only unrelated
+      third-party candidate-assignment repos
+  subdomainEnumeration:
+    source: crt.sh certificate transparency
+    concirrus.com: cpanel, dehli1, eramba, ind1ff0001, ind1ff0001-ext, info, keycloaktest,
+      london1, london1-int, mail, simsafe, snipeit, support, ukl1ff0002, vpninternal,
+      vpntest, webdisk, webmail, whistle, www
+    concirrus.ai: learn, www
+    note: Every non-www host is internal corporate infrastructure (Keycloak test,
+      VPN, eramba GRC, Snipe-IT asset management, cPanel/webmail). No developer,
+      docs, api, or portal host exists on either domain.
+  acordPosture: no ACORD reference found — site search for ACORD, AL3, NGDS and
+    ACORD XML returns zero results across concirrus.ai, and no ACORD solution-provider
+    listing was found
+  insuranceVerbs:
+    quote: partner-gated — rating/quote decisioning exists inside the Underwriting
+      Workbench and the "Enterprise Model" submission-ingestion layer, but is not
+      publicly documented as an API
+    bind: not exposed — Concirrus is a software vendor, not a carrier or MGA of record
+    issue: not exposed
+    fnol: not exposed — claims/loss data is consumed via Loss Run Intelligence, not
+      published as an FNOL API
+    audience: partner-only (carriers, MGAs, brokers under commercial contract); no
+      consumer-facing or agent-facing self-serve surface
+  authModel: not publicly documented. No OIDC or OAuth authorization-server metadata
+    is served at the well-known paths. A keycloaktest.concirrus.com host in
+    certificate transparency suggests Keycloak-based identity for internal or
+    customer-tenant SSO, but nothing about the scheme is documented publicly and
+    no assumption is recorded here.
+  specsHarvested: 0
+  openapiDirectory: none — omitted because no real specification was found
+  postman: none found
+  graphql: none found
+  grpc: none found
+  webhooks: none found — no event catalog and no AsyncAPI. Absence is the finding.
+  transports:
+  - protocol: REST
+    documented: false
+    note: An HTTP API almost certainly exists behind the customer platform ("API
+      first platform" in partner marketing), but no base URL, endpoint, or reference
+      is published.
+  - protocol: GraphQL
+    documented: false
+  - protocol: gRPC
+    documented: false
+  - protocol: WebSocket
+    documented: false
+  - protocol: ACORD/EDI
+    documented: false
+    note: No ACORD AL3, ACORD XML, NGDS or IVANS reference anywhere on the public site.
+  marketContext: |
+    United Kingdom. The FCA and PRA impose no open-insurance obligation, and the
+    FCA's Open Finance work remains consultation rather than rule. The only
+    market-wide data and API infrastructure effort is the London Market
+    modernization programme (Blueprint Two, PPL, Whitespace, Ki), which is aimed
+    at brokers and syndicates rather than developers. Concirrus sits squarely in
+    that seam: it markets London Market connectivity while publishing nothing a
+    developer can read, which is exactly the invisibility this data set is
+    measuring.
+sources:
+- url: https://concirrus.ai/
+  type: Website
+  note: Live marketing site; www.concirrus.com redirects here
+- url: https://concirrus.ai/about/
+  type: About
+  note: Positioning, lines of business, leadership (Andy Yeoman founder/CEO, Vinod
+    Singh co-founder/president, Ankur Jain VP Engineering)
+- url: https://concirrus.ai/partner-ecosystem/
+  type: Partners
+  note: 'Verbatim: "Concirrus provides a modular, API first platform, joint go to
+    market alignment, and partner enablement." No docs link, no reference, no spec.'
+- url: https://concirrus.ai/marine/
+  type: Documentation
+  note: 'Verbatim: "Seamlessly integrate with London Market platforms to streamline
+    data flow and ensure compliance across all risk classes." No named platform or
+    protocol.'
+- url: https://concirrus.ai/enterprise-model-insurance-platform/
+  type: Documentation
+  note: Submission-ingestion platform page; no API, REST, webhook, ACORD or AL3 mention
+- url: https://concirrus.ai/sitemap_index.xml
+  type: Sitemap
+  note: 28 pages enumerated; no developer, docs, API or reference page exists
+actions:
+  openapiHarvested: false
+  specsCount: 0
+  apisListed: 0
+  reason: |
+    apis[] is intentionally empty. Concirrus publishes no self-serve developer
+    portal and no machine-readable API definition, so there is nothing real to
+    list. Recording the absence accurately — partner-gated, commercially
+    negotiated integration with no ACORD posture — is the correct outcome for
+    this provider and for the UK specialty-insurance segment generally.
