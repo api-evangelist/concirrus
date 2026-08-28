@@ -27,6 +27,17 @@ description: >-
   management), ISO/IEC 27001 (information security) and SOC 2 certification,
   claiming to be the first insurtech to hold all three — though no trust center
   or downloadable report accompanies the announcement.
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - Insurance
